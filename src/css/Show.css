@@ -1,0 +1,252 @@
+.container {
+  position: relative;
+  /* width: 360px; */
+  /* height: 911px; */
+}
+
+.flex {
+  display: flex;
+}
+.word {
+  width: 172px;
+  height: 56px;
+  left: 18px;
+  top: 26px;
+
+  font-family: Noto Sans Bengali;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 28px;
+  letter-spacing: -0.05em;
+
+  color: #000000;
+}
+.container .main_word .star_show {
+  position: absolute;
+  width: 28.93px;
+  height: 28.93px;
+  left: 150.07px;
+  top: 65px;
+
+  transform: rotate(0.15deg);
+}
+.main_word .recent_show {
+  position: absolute;
+  left: 55%;
+  right: 4.44%;
+  top: 131px;
+  bottom: 7.32%;
+
+  font-family: Noto Sans Bengali;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 13px;
+  text-align: right;
+  letter-spacing: -0.05em;
+
+  color: #ff6b00;
+}
+.main_word .recent_scroll {
+  display: none;
+}
+.container .new_boxs .box_show {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 360px;
+  height: 125px;
+  left: 0px;
+  top: 159px;
+  border-bottom: 1px solid #ececec;
+}
+.container .new_boxs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+.container .new_boxs .box_show:first-child {
+  margin-top: 65px;
+}
+
+.box_show .numbers {
+  width: 38px;
+  height: 41px;
+  left: 15px;
+  top: 0px;
+  padding-left: 15px;
+  padding-top: 19.5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 41px;
+  /* identical to box height */
+
+  letter-spacing: -0.05em;
+}
+.box_show .titleFont {
+  height: 72px;
+  left: 0px;
+  right: 24px;
+  top: 0px;
+  padding-left: 13px;
+  padding-top: 19.5px;
+  font-family: Noto Sans Bengali;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.05em;
+}
+.box_show .imgLink {
+  width: 12px;
+  height: 23px;
+  left: 333px;
+  top: 0px;
+  transform: rotate(180deg);
+  padding-top: 19.5px;
+  padding-right: 15px;
+}
+.box_show .url {
+  width: 360px;
+  height: 14px;
+  left: 67px;
+  top: 0px;
+  padding-top: 5px;
+  padding-left: 45px;
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+  /* identical to box height */
+
+  color: #757171;
+}
+.box_show .userShow {
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 1px 9px;
+  /* left: 68px; */
+  top: 6px;
+  margin-left: 45px;
+  margin-top: 7px;
+  background: #ff6b00;
+  border-radius: 10px;
+}
+
+.box_show .userShow .userNameShow {
+  width: 100%;
+  font-family: Noto Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 11px;
+
+  /* identical to box height */
+
+  text-align: center;
+  color: #ffffff;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.more_post_show {
+  position: absolute;
+  display: none;
+  left: 43%;
+  right: 43%;
+  top: 82.05%;
+  bottom: 32%;
+  justify-content: center;
+}
+
+.modal-container {
+  position: absolute;
+  width: 326px;
+  height: 320px;
+  background: #222222;
+  border: 1px solid #757171;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  top: 180px;
+  right: 18px;
+}
+.modal .modal-top {
+  margin-top: 18px;
+}
+.modal .modal-top p {
+  font-family: Noto Sans Bengali;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.05em;
+  margin-left: 21px;
+}
+.modal .modal-top button {
+  position: absolute;
+  left: 85.28%;
+  right: 0%;
+  top: 0%;
+  bottom: 85%;
+}
+.modal .user-profile {
+  position: absolute;
+  left: 6.44%;
+  right: 78.53%;
+  top: 20.94%;
+  bottom: 63.75%;
+  border-radius: 50%;
+  background: url(.jpg), #c4c4c4;
+  border: 2px solid #fafafa;
+  box-sizing: border-box;
+}
+
+.modal .user-detail-info {
+  position: absolute;
+  left: 27.3%;
+  right: 11.04%;
+  top: 19.38%;
+  bottom: 74.91%;
+
+  font-family: Noto Sans Bengali;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.05em;
+}
+.modal .about {
+  position: absolute;
+  left: 7.67%;
+  right: 12.58%;
+  top: 40%;
+  bottom: 34.06%;
+
+  font-family: Noto Sans Bengali;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.05em;
+}
+.modal .email {
+  position: absolute;
+  left: 27.61%;
+  right: 40.49%;
+  top: 68.44%;
+  bottom: 26.88%;
+
+  font-family: Noto Sans Bengali;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.05em;
+}
