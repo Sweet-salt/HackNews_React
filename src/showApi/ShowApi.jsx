@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Show } from "../api";
+import UseUser from "../scroll/userInfo";
 
 function ShowContents() {
   const [storyIds, setStoryIds] = useState([]);
@@ -50,9 +51,7 @@ function ShowContents() {
           setVisible(!visible);
         }}
       >
-        <a href={"#"} className="userNameShow">
-          {m.user}
-        </a>
+        <div className="userNameShow">{m.user}</div>
       </button>
     </div>
   ));
@@ -73,16 +72,7 @@ function ShowContents() {
                 <img src={`/assets/close_black.svg`} alt="" />
               </button>
             </div>
-            <div className="user-detail flex">
-              <div className="user-profile"></div>
-              <div className="user-detail-info">
-                <p>user : </p>
-                <p>created : </p>
-                <p>karma : </p>
-              </div>
-            </div>
-            <p className="about">about:</p>
-            <p className="email">Twitter:</p>
+            <UseUser />
           </div>
         </div>
       )}

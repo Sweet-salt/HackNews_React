@@ -39,10 +39,12 @@ function JobsContents() {
         <a href={m.url} className="titleFont">
           {m.title}
         </a>
+
         <a href={m.url}>
           <img src={`/assets/back.svg`} alt="" className="imgLink" />
         </a>
       </div>
+      <br />
       <div className="url">
         <a href={m.url}>{m.url}</a>
       </div>

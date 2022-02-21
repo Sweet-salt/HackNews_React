@@ -36,3 +36,8 @@ export const getStory = async (storyId) => {
     .then(({ data }) => data);
   return res;
 };
+
+export const getUser = async (userId) => {
+  const { data: userInfo } = await axios.get(`${storyUrl}/${userId}.json`);
+  return userInfo;
+};
