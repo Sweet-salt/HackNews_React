@@ -20,7 +20,6 @@ const UseUser = (id) => {
       </div>
       <p className="about">about:</p>
       <p className="email">Twitter:</p>);
-      {console.log("123123213")}
     </>
   );
 };

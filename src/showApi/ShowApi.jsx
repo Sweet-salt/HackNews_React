@@ -1,13 +1,17 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Show } from "../api";
+import { Show, User } from "../api";
 import UseUser from "../scroll/userInfo";
+import Loader from "../scroll/Loader";
 
 function ShowContents() {
   const [storyIds, setStoryIds] = useState([]);
   const [visible, setVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
+    setIsLoaded(true);
     Show().then((res) => {
       this.res = res.data.slice(0, 10);
       this.res.forEach(async (ele) => {
@@ -28,10 +32,12 @@ function ShowContents() {
                 }
               ]);
             }
+            setIsLoaded(false);
           });
       });
     });
   }, []);
+
   const menu = storyIds;
   const menuList = menu.map((m, i) => (
     <div className="box_show" key={i}>
@@ -55,9 +61,11 @@ function ShowContents() {
       </button>
     </div>
   ));
+
   return (
     <>
       {menuList}
+      {isLoaded && <Loader />}
       {visible && (
         <div className="modal-container" id="modal">
           <div className="modal">

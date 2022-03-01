@@ -23,21 +23,19 @@ function Show() {
   return axios.get(`${BASE_URL}showstories.json`);
 }
 
-export { News, Jobs, Top_API, Ask, Show, BASE_URL };
+function User() {
+  return axios.get(`${BASE_URL}user`);
+}
+export { News, Jobs, Top_API, Ask, Show, BASE_URL, User };
 
-export const getStoryIds = async () => {
-  const res = await axios.get(News).then((d) => d);
-  return res;
-};
+// export const getStoryIds = async () => {
+//   const res = await axios.get(News).then((d) => d);
+//   return res;
+// };
 
-export const getStory = async (storyId) => {
-  const res = await axios
-    .get(`${storyUrl + storyId}.json`)
-    .then(({ data }) => data);
-  return res;
-};
-
-export const getUser = async (userId) => {
-  const { data: userInfo } = await axios.get(`${storyUrl}/${userId}.json`);
-  return userInfo;
-};
+// export const getStory = async (storyId) => {
+//   const res = await axios
+//     .get(`${storyUrl + storyId}.json`)
+//     .then(({ data }) => data);
+//   return res;
+// };

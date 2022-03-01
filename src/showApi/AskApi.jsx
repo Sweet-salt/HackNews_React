@@ -2,11 +2,13 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Ask } from "../api";
+import Loader from "../scroll/Loader";
 
 function AskContents() {
   const [storyIds, setStoryIds] = useState([]);
-
+  const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
+    setIsLoaded(true);
     Ask().then((res) => {
       this.res = res.data.slice(0, 10);
       this.res.forEach(async (ele) => {
@@ -27,6 +29,7 @@ function AskContents() {
                 }
               ]);
             }
+            setIsLoaded(false);
           });
       });
     });
@@ -51,7 +54,12 @@ function AskContents() {
       </button>
     </div>
   ));
-  return <ul>{menuList}</ul>;
+  return (
+    <>
+      <ul>{menuList}</ul>
+      {isLoaded && <Loader />}
+    </>
+  );
 }
 
 export default AskContents;

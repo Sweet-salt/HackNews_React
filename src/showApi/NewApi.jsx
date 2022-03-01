@@ -1,13 +1,15 @@
-import React from "react";
+import React, { memo } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { News } from "../api";
+import Loader from "../scroll/Loader";
 
 function TopContents() {
   const [storyIds, setStoryIds] = useState([]);
-
+  const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     News().then((res) => {
+      setIsLoaded(true);
       this.res = res.data.slice(0, 10);
       this.res.forEach(async (ele) => {
         await axios
@@ -27,6 +29,7 @@ function TopContents() {
                 }
               ]);
             }
+            setIsLoaded(false);
           });
       });
     });
@@ -39,13 +42,17 @@ function TopContents() {
         <a href={m.url} className="titleFont">
           {m.title}
         </a>
-        <br />
       </div>
       <br />
       <div className="underline"></div>
     </div>
   ));
-  return <ul>{menuList}</ul>;
+  return (
+    <>
+      <ul>{menuList}</ul>
+      {isLoaded && <Loader />}
+    </>
+  );
 }
 
 export default TopContents;

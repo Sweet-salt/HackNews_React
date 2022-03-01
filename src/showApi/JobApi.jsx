@@ -2,11 +2,14 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Jobs } from "../api";
+import Loader from "../scroll/Loader";
 
 function JobsContents() {
   const [storyIds, setStoryIds] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    setIsLoaded(true);
     Jobs().then((res) => {
       this.res = res.data.slice(0, 10);
       this.res.forEach(async (ele) => {
@@ -27,6 +30,7 @@ function JobsContents() {
                 }
               ]);
             }
+            setIsLoaded(false);
           });
       });
     });
@@ -50,7 +54,12 @@ function JobsContents() {
       </div>
     </div>
   ));
-  return <ul>{menuList}</ul>;
+  return (
+    <>
+      <ul>{menuList}</ul>
+      {isLoaded && <Loader />}
+    </>
+  );
 }
 
 export default JobsContents;

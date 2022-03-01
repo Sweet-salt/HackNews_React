@@ -2,11 +2,14 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Top_API } from "../api";
+import Loader from "../scroll/Loader";
 
 function TopContents() {
   const [storyIds, setStoryIds] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    setIsLoaded(true);
     Top_API().then((res) => {
       this.res = res.data.slice(0, 3);
       this.res.forEach(async (ele) => {
@@ -29,6 +32,7 @@ function TopContents() {
                 }
               ]);
             }
+            setIsLoaded(false);
           });
       });
     });
@@ -53,7 +57,12 @@ function TopContents() {
       </div>
     </div>
   ));
-  return <ul>{menuList}</ul>;
+  return (
+    <>
+      <ul>{menuList}</ul>
+      {isLoaded && <Loader />}
+    </>
+  );
 }
 
 export default TopContents;
